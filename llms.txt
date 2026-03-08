@@ -17,3 +17,8 @@ A free online word counter and character counter that runs entirely in the brows
 ## Pages
 
 - Home: https://freewordcounter.app/
+- vs WordCounter.net: https://freewordcounter.app/vs-wordcounter-net.html
+- vs WordCounterTool.com: https://freewordcounter.app/vs-wordcountertool.html
+- vs CharacterCountOnline.com: https://freewordcounter.app/vs-charactercountonline.html
+- Word Counter for Essays: https://freewordcounter.app/word-counter-for-essays.html
+- Word Counter for Students: https://freewordcounter.app/word-counter-for-students.html
