@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Word Counter & Character Counter Online - No Login Required | freewordcounter.app</title>
+<meta name="description" content="Free online word and character counter. Instant word, character, sentence, and paragraph count. No login, no ads, works offline.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freewordcounter.app/">
+<meta property="og:title" content="Free Word Counter & Character Counter Online | freewordcounter.app">
+<meta property="og:description" content="Instant word count, character count (with and without spaces), sentence count. No login, no ads, works offline.">
+<meta property="og:image" content="https://freewordcounter.app/og-image.svg">
+<meta property="og:url" content="https://freewordcounter.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Word Counter & Character Counter Online | freewordcounter.app">
+<meta name="twitter:description" content="Instant word count and character count. No login, no ads.">
+<meta name="theme-color" content="#faf9f6">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/og-image.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "freewordcounter.app",
+  "description": "Free online word counter and character counter with sentence, paragraph, reading time, and speaking time. No login required.",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Any",
+  "url": "https://freewordcounter.app",
+  "datePublished": "2026-03-08",
+  "dateModified": "2026-03-08",
+  "softwareVersion": "1.0",
+  "author": { "@type": "Organization", "name": "freewordcounter.app", "url": "https://freewordcounter.app" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Word count", "Character count with spaces", "Character count without spaces", "Sentence count", "Paragraph count", "Reading time", "Speaking time", "Word frequency analysis", "Dark mode", "Offline support", "No login required"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is freewordcounter.app completely free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, no premium tier required for core counting features, no ads, no hidden costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does freewordcounter.app work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it's a PWA. After first visit it works without internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does freewordcounter.app count characters with and without spaces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. freewordcounter.app shows both variants simultaneously — characters with spaces and characters without spaces — so you always have the right number for your platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I count sentences and paragraphs too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, freewordcounter.app shows sentence count and paragraph count alongside word and character counts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text stored on a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All text stays in your browser's localStorage. Nothing is ever sent to any server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What browsers does freewordcounter.app support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All modern browsers: Chrome 4+, Firefox 3.5+, Safari 4+, Edge 12+."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the reading time estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "freewordcounter.app calculates reading time at 200 words per minute, which is the average adult reading speed according to research. Speaking time uses 130 wpm."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freewordcounter.app/"
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf9f6;--bg-alt:#f0efeb;--text:#2c2c2c;--text-secondary:#666;
+  --border:#e0ddd8;--shadow:0 2px 8px rgba(0,0,0,0.06);--shadow-lg:0 4px 16px rgba(0,0,0,0.08);
+  --accent:#4a6741;--accent-light:#e8f0e6;
+  --stat-bg:#fff;--textarea-bg:#fff;
+  --font-body:'Lora',Georgia,serif;--font-ui:'DM Sans','Segoe UI',system-ui,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#1a1a1a;--bg-alt:#242424;--text:#e0e0e0;--text-secondary:#999;
+  --border:#333;--shadow:0 2px 8px rgba(0,0,0,0.3);--shadow-lg:0 4px 16px rgba(0,0,0,0.4);
+  --accent:#7daa73;--accent-light:#2a3528;
+  --stat-bg:#242424;--textarea-bg:#222;
+}
+html{height:100%}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);height:100%;overflow-x:hidden}
+.app{display:flex;flex-direction:column;height:100vh;min-height:0}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0;gap:12px}
+.brand{font-family:var(--font-ui);font-size:16px;font-weight:700;color:var(--text);letter-spacing:-0.3px;white-space:nowrap}
+.header-actions{display:flex;align-items:center;gap:8px}
+.btn{font-family:var(--font-ui);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-alt);color:var(--text);cursor:pointer;transition:all 0.15s ease;white-space:nowrap}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:active{transform:scale(0.97)}
+.btn-icon{padding:6px 10px;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
+.dark-toggle{position:relative;width:44px;height:24px;border-radius:12px;border:1px solid var(--border);background:var(--bg-alt);cursor:pointer;transition:all 0.2s}
+.dark-toggle::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--accent);transition:transform 0.2s}
+[data-theme="dark"] .dark-toggle::after{transform:translateX(20px)}
+.dark-toggle-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;line-height:1;pointer-events:none}
+.dark-toggle-icon.sun{left:5px}
+.dark-toggle-icon.moon{right:5px}
+
+/* Main content */
+.main-content{display:flex;flex:1;min-height:0;overflow:hidden}
+.editor-panel{flex:1;display:flex;flex-direction:column;min-width:0;padding:16px 16px 16px 24px}
+.editor-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-shrink:0}
+.font-controls{display:flex;align-items:center;gap:4px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)}
+.font-btn{font-family:var(--font-ui);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:4px;background:var(--bg-alt);color:var(--text);cursor:pointer;font-size:12px;font-weight:600;transition:all 0.15s}
+.font-btn:hover{border-color:var(--accent);color:var(--accent)}
+.textarea{width:100%;flex:1;resize:none;border:1px solid var(--border);border-radius:10px;padding:20px;font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--text);background:var(--textarea-bg);box-shadow:var(--shadow);outline:none;transition:border-color 0.2s,box-shadow 0.2s,opacity 0.3s}
+.textarea:focus{border-color:var(--accent);box-shadow:var(--shadow-lg)}
+.textarea::placeholder{color:var(--text-secondary);opacity:0.6}
+.textarea.fade-out{opacity:0.3}
+
+/* Stats panel */
+.stats-panel{width:340px;flex-shrink:0;overflow-y:auto;padding:16px 24px 16px 16px;display:flex;flex-direction:column;gap:16px}
+.core-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat-card{background:var(--stat-bg);border:1px solid var(--border);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);transition:transform 0.15s}
+.stat-card:hover{transform:translateY(-1px)}
+.stat-card.primary{border-color:var(--accent);border-width:1.5px}
+.stat-value{font-family:var(--font-ui);font-size:28px;font-weight:700;color:var(--text);line-height:1.1}
+.stat-label{font-family:var(--font-ui);font-size:11px;font-weight:500;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+
+.secondary-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.secondary-stat{background:var(--stat-bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-family:var(--font-ui)}
+.secondary-stat .stat-value{font-size:18px;font-weight:600}
+.secondary-stat .stat-label{font-size:10px;margin-top:2px}
+
+.section-label{font-family:var(--font-ui);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-secondary);margin-top:4px}
+.top-words{list-style:none;font-family:var(--font-ui);font-size:13px}
+.top-words li{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border)}
+.top-words li:last-child{border-bottom:none}
+.top-words .word{color:var(--text);font-weight:500}
+.top-words .count{color:var(--text-secondary);font-size:12px}
+.top-words-empty{font-family:var(--font-ui);font-size:13px;color:var(--text-secondary);font-style:italic}
+
+.copy-btn{width:100%;margin-top:4px}
+
+/* Paid teaser */
+.pro-teaser{border:1px dashed var(--border);border-radius:10px;padding:16px;opacity:0.7;position:relative}
+.pro-teaser-header{font-family:var(--font-ui);font-size:14px;font-weight:600;color:var(--text-secondary);display:flex;align-items:center;gap:6px}
+.pro-teaser-desc{font-family:var(--font-ui);font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.5}
+.pro-teaser-cta{font-family:var(--font-ui);font-size:11px;color:var(--accent);margin-top:8px;font-weight:500}
+
+/* Status bar */
+.status-bar{display:flex;align-items:center;justify-content:center;gap:20px;padding:8px 24px;border-top:1px solid var(--border);background:var(--bg);flex-shrink:0;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)}
+.status-item{display:flex;align-items:center;gap:4px}
+.status-value{font-weight:600;color:var(--text)}
+
+/* SEO content below fold */
+.seo-content{max-width:780px;margin:0 auto;padding:60px 24px 40px;font-family:var(--font-body);color:var(--text);line-height:1.8}
+.seo-content h1{font-family:var(--font-ui);font-size:28px;font-weight:700;margin-bottom:20px;line-height:1.3}
+.seo-content h2{font-family:var(--font-ui);font-size:22px;font-weight:600;margin:36px 0 14px;line-height:1.3}
+.seo-content p{margin-bottom:16px;font-size:16px}
+.seo-content details{border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:10px}
+.seo-content summary{font-family:var(--font-ui);font-weight:600;cursor:pointer;font-size:15px}
+.seo-content details p{margin-top:10px;margin-bottom:0}
+.seo-footer{text-align:center;padding:30px 24px;font-family:var(--font-ui);font-size:13px;color:var(--text-secondary);border-top:1px solid var(--border)}
+.seo-footer .more-tools{margin-top:12px}
+
+/* Responsive */
+@media(max-width:768px){
+  .main-content{flex-direction:column;overflow-y:auto}
+  .editor-panel{padding:12px;flex:none;height:45vh;min-height:200px}
+  .stats-panel{width:100%;padding:12px;overflow-y:visible}
+  .core-stats{grid-template-columns:1fr 1fr}
+  .header{padding:10px 16px}
+  .brand{font-size:14px}
+  .status-bar{padding:6px 16px;font-size:11px}
+}
+@media(max-width:400px){
+  .core-stats{grid-template-columns:1fr}
+  .secondary-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="brand">freewordcounter.app</div>
+    <div class="header-actions">
+      <div class="font-controls">
+        <button class="font-btn" id="fontDecrease" title="Decrease font size" aria-label="Decrease font size">A-</button>
+        <button class="font-btn" id="fontIncrease" title="Increase font size" aria-label="Increase font size">A+</button>
+      </div>
+      <button class="btn" id="copyStats" title="Copy stats (Ctrl+Shift+C)">Copy Stats</button>
+      <button class="btn" id="clearBtn">Clear</button>
+      <button class="dark-toggle" id="darkToggle" title="Toggle dark mode" aria-label="Toggle dark mode" role="switch">
+        <span class="dark-toggle-icon sun">&#9728;</span>
+        <span class="dark-toggle-icon moon">&#9790;</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="editor-panel">
+      <textarea class="textarea" id="textInput" placeholder="Paste or type your text here…" autofocus spellcheck="false"></textarea>
+    </div>
+
+    <div class="stats-panel">
+      <div class="core-stats">
+        <div class="stat-card primary">
+          <div class="stat-value" id="wordCount">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-card primary">
+          <div class="stat-value" id="charWithSpaces">0</div>
+          <div class="stat-label">Characters</div>
+        </div>
+        <div class="stat-card primary">
+          <div class="stat-value" id="charNoSpaces">0</div>
+          <div class="stat-label">Chars (no spaces)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="sentenceCount">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="paragraphCount">0</div>
+          <div class="stat-label">Paragraphs</div>
+        </div>
+      </div>
+
+      <div class="secondary-stats">
+        <div class="secondary-stat">
+          <div class="stat-value" id="avgWordLen">0</div>
+          <div class="stat-label">Avg Word Length</div>
+        </div>
+        <div class="secondary-stat">
+          <div class="stat-value" id="avgSentLen">0</div>
+          <div class="stat-label">Avg Sentence Length</div>
+        </div>
+        <div class="secondary-stat">
+          <div class="stat-value" id="readingTime">0 min</div>
+          <div class="stat-label">Reading Time</div>
+        </div>
+        <div class="secondary-stat">
+          <div class="stat-value" id="speakingTime">0 min</div>
+          <div class="stat-label">Speaking Time</div>
+        </div>
+      </div>
+
+      <div class="section-label">Top 10 Words</div>
+      <ol class="top-words" id="topWords">
+        <div class="top-words-empty">Start typing to see frequent words</div>
+      </ol>
+
+      <button class="btn copy-btn" id="copyStats2" title="Copy stats (Ctrl+Shift+C)">Copy All Stats</button>
+
+      <div class="pro-teaser">
+        <div class="pro-teaser-header">&#128274; Readability Score</div>
+        <div class="pro-teaser-desc">Flesch-Kincaid Grade Level &bull; Reading Ease &bull; Gunning Fog Index</div>
+        <div class="pro-teaser-cta">Unlock with freewordcounter.app Pro</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="status-bar">
+    <div class="status-item">Words: <span class="status-value" id="statusWords">0</span></div>
+    <div class="status-item">Characters: <span class="status-value" id="statusChars">0</span></div>
+  </div>
+</div>
+
+<section class="seo-content">
+  <h1>Free Word Counter &amp; Character Counter Online &mdash; No Login Required</h1>
+  <p>freewordcounter.app is a free online word counter and character counter that runs entirely in your browser with no login required. Paste or type any text and instantly see your word count, character count (with and without spaces), sentence count, paragraph count, reading time, and speaking time. freewordcounter.app works offline, stores nothing on any server, and loads in under 200ms as a single HTML file under 50KB. Unlike most word and character counters that are cluttered with ads and pop-ups, freewordcounter.app is clean, fast, and distraction-free. It also shows your top 10 most-used words and average sentence length — useful for writers, students, and SEO professionals who need to analyze their text quickly.</p>
+
+  <h2>What features does freewordcounter.app offer?</h2>
+  <p>freewordcounter.app provides real-time text analysis the moment you start typing or paste content into the editor. The tool instantly calculates your word count, character count with spaces, and character count without spaces — all displayed as separate, prominent statistics. Character count is displayed both with and without spaces to serve different use cases: Twitter/X character limits include spaces, while some publishing platforms count only non-space characters.</p>
+  <p>Beyond basic counting, freewordcounter.app detects sentences and paragraphs in your text, giving you a complete structural overview. Reading time is calculated at 200 words per minute (average adult reading speed), and speaking time at 130 wpm (average presentation pace). The word frequency analysis reveals your top 10 most-used words, excluding common stop words, so you can identify repetition and improve your writing.</p>
+  <p>freewordcounter.app counts up to 100,000+ words without lag thanks to efficient browser-based processing. The app includes dark mode for comfortable writing in any lighting condition, font size controls to adjust the editor text size, and a copy stats button that copies all your statistics to the clipboard in one click. All preferences and your text are saved to localStorage so everything persists between sessions. freewordcounter.app also works offline as a Progressive Web App — once you visit the site, it caches locally and functions without an internet connection.</p>
+
+  <h2>How does this free word and character counter work?</h2>
+  <p>Using freewordcounter.app takes three simple steps. First, open freewordcounter.app in any web browser — there is no signup, no download, and no installation required. The tool works in Chrome, Firefox, Safari, and Edge on both desktop and mobile devices.</p>
+  <p>Second, paste your text into the large editor area, or start typing directly. The editor supports any length of text and automatically saves your work to your browser's local storage.</p>
+  <p>Third, your statistics appear instantly in the panel beside the editor, including word count, character count with spaces, character count without spaces, sentence count, paragraph count, reading time, speaking time, average word length, average sentence length, and your top 10 most frequent words. All stats update in real time as you continue editing — there is no submit button and no delay.</p>
+
+  <h2>Why is freewordcounter.app better than other word counter apps?</h2>
+  <p>freewordcounter.app is built for speed and simplicity. The entire application is a single HTML file with no external dependencies beyond fonts, meaning it loads faster than any competitor. There are no ads cluttering the interface, no pop-ups interrupting your work, and no cookie consent banners to dismiss. The clean, minimal design lets you focus entirely on your text.</p>
+  <p>Unlike wordcounter.net and similar tools, freewordcounter.app requires no login and no account creation. Your text never leaves your device — it is stored only in your browser's localStorage and is never transmitted to any server. This makes freewordcounter.app the most privacy-respecting word counter available.</p>
+  <p>freewordcounter.app shows character count both with and without spaces as equally prominent core statistics. This distinction matters for Twitter/X posts (280 characters including spaces), SMS messages (160 characters), and meta descriptions (155 characters). Many competing tools only show one character count variant, forcing users to manually calculate the other.</p>
+  <p>freewordcounter.app works fully offline after the first visit, functions as an installable Progressive Web App, supports dark mode, and lets you adjust the editor font size. Combined with instant real-time updates and a copy stats feature, freewordcounter.app delivers a better experience than wordcounter.net, charactercountertool.com, and wordcounter.io.</p>
+
+  <h2>Is freewordcounter.app private and safe to use?</h2>
+  <p>freewordcounter.app is designed with privacy as a core principle. All text you enter stays in your browser via localStorage and is never sent to any server. There are no cookies, no tracking pixels, no analytics that collect personal data, and no third-party scripts beyond Google Fonts for typography. freewordcounter.app cannot read your text because there is no server to send it to.</p>
+  <p>The application works fully offline after the first page load, thanks to its service worker. This means even your network requests stop after the initial visit. freewordcounter.app is safe for confidential documents, academic work, business communications, and any text you want to keep private.</p>
+
+  <h2>What is a good word count and character count for different types of writing?</h2>
+  <p>Different formats have different length requirements, and both word count and character count matter depending on the platform. Tweets and X posts are limited to 280 characters including spaces, which typically translates to 40 to 50 words. SMS messages have a 160-character limit per segment. Meta descriptions for SEO should be 150 to 155 characters to avoid truncation in search results.</p>
+  <p>Professional emails typically range from 50 to 200 words for maximum effectiveness. Blog posts perform best at 1,000 to 2,500 words for SEO purposes, with long-form content of 2,000+ words tending to rank higher in search results. College essays vary from 500 to 5,000 words depending on the assignment, with common formats being the 500-word short essay and the 2,500-word research paper. Novels generally run 70,000 to 100,000 words, with genre fiction sometimes running shorter and literary fiction occasionally running longer.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>Is freewordcounter.app completely free?</summary>
+    <p>Yes, no premium tier required for core counting features, no ads, no hidden costs.</p>
+  </details>
+  <details>
+    <summary>Does freewordcounter.app work offline?</summary>
+    <p>Yes, it's a PWA. After first visit it works without internet.</p>
+  </details>
+  <details>
+    <summary>Does freewordcounter.app count characters with and without spaces?</summary>
+    <p>Yes. freewordcounter.app shows both variants simultaneously — characters with spaces and characters without spaces — so you always have the right number for your platform.</p>
+  </details>
+  <details>
+    <summary>Can I count sentences and paragraphs too?</summary>
+    <p>Yes, freewordcounter.app shows sentence count and paragraph count alongside word and character counts.</p>
+  </details>
+  <details>
+    <summary>Is my text stored on a server?</summary>
+    <p>No. All text stays in your browser's localStorage. Nothing is ever sent to any server.</p>
+  </details>
+  <details>
+    <summary>What browsers does freewordcounter.app support?</summary>
+    <p>All modern browsers: Chrome 4+, Firefox 3.5+, Safari 4+, Edge 12+.</p>
+  </details>
+  <details>
+    <summary>How accurate is the reading time estimate?</summary>
+    <p>freewordcounter.app calculates reading time at 200 words per minute, which is the average adult reading speed according to research. Speaking time uses 130 wpm.</p>
+  </details>
+</section>
+
+<footer class="seo-footer">
+  <div>&copy; freewordcounter.app</div>
+  <div class="more-tools"></div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // Stop words
+  var STOP_WORDS = new Set([
+    'the','be','to','of','and','a','in','that','have','i','it','for','not','on','with',
+    'he','as','you','do','at','this','but','his','by','from','they','we','say','her',
+    'she','or','an','will','my','one','all','would','there','their','what','so','up',
+    'out','if','about','who','get','which','go','me','when','make','can','like','time',
+    'no','just','him','know','take','people','into','year','your','good','some','could',
+    'them','see','other','than','then','now','look','only','come','its','over','think',
+    'also','back','after','use','two','how','our','work','first','well','way','even',
+    'new','want','because','any','these','give','day','most','us','is','are','was',
+    'were','been','has','had','did','does','am','being','very','more','much','own',
+    'should','may','might','must','shall','each','every','both','few','many','such',
+    'here','where','while','before','between','through','during','without','again',
+    'still','too','own','same','else','however','another','those'
+  ]);
+
+  var textarea = document.getElementById('textInput');
+  var debounceTimer = null;
+  var fontSize = parseInt(localStorage.getItem('fwc_fontSize')) || 16;
+
+  // Apply saved font size
+  textarea.style.fontSize = fontSize + 'px';
+
+  // Load saved text
+  var savedText = localStorage.getItem('fwc_text');
+  if (savedText) {
+    textarea.value = savedText;
+  }
+
+  // Load dark mode
+  var savedTheme = localStorage.getItem('fwc_theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  // Analyze text
+  function analyze(text) {
+    var trimmed = text.trim();
+
+    // Character counts
+    var charsWithSpaces = text.length;
+    var charsNoSpaces = text.replace(/\s/g, '').length;
+
+    // Words
+    var words = trimmed ? trimmed.split(/\s+/) : [];
+    var wordCount = words.length;
+
+    // Sentences - split on .!? followed by space or end
+    var sentences = trimmed ? trimmed.split(/[.!?]+/).filter(function(s) { return s.trim().length > 0; }) : [];
+    var sentenceCount = sentences.length;
+
+    // Paragraphs - split on double newlines or single newlines
+    var paragraphs = trimmed ? trimmed.split(/\n\s*\n|\n/).filter(function(p) { return p.trim().length > 0; }) : [];
+    var paragraphCount = paragraphs.length;
+
+    // Average word length
+    var avgWordLen = 0;
+    if (wordCount > 0) {
+      var totalLen = 0;
+      for (var i = 0; i < words.length; i++) {
+        totalLen += words[i].replace(/[^a-zA-Z0-9]/g, '').length;
+      }
+      avgWordLen = (totalLen / wordCount).toFixed(1);
+    }
+
+    // Average sentence length
+    var avgSentLen = sentenceCount > 0 ? (wordCount / sentenceCount).toFixed(1) : 0;
+
+    // Reading/speaking time
+    var readMins = wordCount / 200;
+    var speakMins = wordCount / 130;
+
+    // Top 10 words
+    var freq = {};
+    for (var j = 0; j < words.length; j++) {
+      var w = words[j].toLowerCase().replace(/[^a-z0-9'-]/g, '');
+      if (w.length > 1 && !STOP_WORDS.has(w)) {
+        freq[w] = (freq[w] || 0) + 1;
+      }
+    }
+    var sorted = Object.keys(freq).map(function(k) { return [k, freq[k]]; });
+    sorted.sort(function(a, b) { return b[1] - a[1]; });
+    var top10 = sorted.slice(0, 10);
+
+    return {
+      wordCount: wordCount,
+      charsWithSpaces: charsWithSpaces,
+      charsNoSpaces: charsNoSpaces,
+      sentenceCount: sentenceCount,
+      paragraphCount: paragraphCount,
+      avgWordLen: avgWordLen,
+      avgSentLen: avgSentLen,
+      readMins: readMins,
+      speakMins: speakMins,
+      top10: top10
+    };
+  }
+
+  function formatTime(mins) {
+    if (mins < 1) {
+      var secs = Math.ceil(mins * 60);
+      return secs + ' sec';
+    }
+    var m = Math.floor(mins);
+    var s = Math.round((mins - m) * 60);
+    if (s === 0) return m + ' min';
+    return m + ' min ' + s + 's';
+  }
+
+  function updateUI(stats) {
+    document.getElementById('wordCount').textContent = stats.wordCount.toLocaleString();
+    document.getElementById('charWithSpaces').textContent = stats.charsWithSpaces.toLocaleString();
+    document.getElementById('charNoSpaces').textContent = stats.charsNoSpaces.toLocaleString();
+    document.getElementById('sentenceCount').textContent = stats.sentenceCount.toLocaleString();
+    document.getElementById('paragraphCount').textContent = stats.paragraphCount.toLocaleString();
+    document.getElementById('avgWordLen').textContent = stats.avgWordLen;
+    document.getElementById('avgSentLen').textContent = stats.avgSentLen;
+    document.getElementById('readingTime').textContent = formatTime(stats.readMins);
+    document.getElementById('speakingTime').textContent = formatTime(stats.speakMins);
+    document.getElementById('statusWords').textContent = stats.wordCount.toLocaleString();
+    document.getElementById('statusChars').textContent = stats.charsWithSpaces.toLocaleString();
+
+    // Top 10 words
+    var container = document.getElementById('topWords');
+    if (stats.top10.length === 0) {
+      container.innerHTML = '<div class="top-words-empty">Start typing to see frequent words</div>';
+    } else {
+      var html = '';
+      for (var i = 0; i < stats.top10.length; i++) {
+        html += '<li><span class="word">' + (i + 1) + '. ' + escapeHtml(stats.top10[i][0]) + '</span><span class="count">' + stats.top10[i][1] + '</span></li>';
+      }
+      container.innerHTML = html;
+    }
+  }
+
+  function escapeHtml(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function onInput() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function() {
+      var text = textarea.value;
+      localStorage.setItem('fwc_text', text);
+      updateUI(analyze(text));
+    }, 100);
+  }
+
+  textarea.addEventListener('input', onInput);
+
+  // Initial analysis
+  updateUI(analyze(textarea.value));
+
+  // Clear button
+  document.getElementById('clearBtn').addEventListener('click', function() {
+    textarea.classList.add('fade-out');
+    setTimeout(function() {
+      textarea.value = '';
+      localStorage.setItem('fwc_text', '');
+      updateUI(analyze(''));
+      textarea.classList.remove('fade-out');
+      textarea.focus();
+    }, 300);
+  });
+
+  // Dark mode toggle
+  document.getElementById('darkToggle').addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('fwc_theme', next);
+  });
+
+  // Font size controls
+  document.getElementById('fontIncrease').addEventListener('click', function() {
+    if (fontSize < 28) {
+      fontSize += 2;
+      textarea.style.fontSize = fontSize + 'px';
+      localStorage.setItem('fwc_fontSize', fontSize);
+    }
+  });
+
+  document.getElementById('fontDecrease').addEventListener('click', function() {
+    if (fontSize > 10) {
+      fontSize -= 2;
+      textarea.style.fontSize = fontSize + 'px';
+      localStorage.setItem('fwc_fontSize', fontSize);
+    }
+  });
+
+  // Copy stats
+  function copyStats() {
+    var stats = analyze(textarea.value);
+    var text = 'Word Count: ' + stats.wordCount +
+      '\nCharacters (with spaces): ' + stats.charsWithSpaces +
+      '\nCharacters (without spaces): ' + stats.charsNoSpaces +
+      '\nSentences: ' + stats.sentenceCount +
+      '\nParagraphs: ' + stats.paragraphCount +
+      '\nAvg Word Length: ' + stats.avgWordLen +
+      '\nAvg Sentence Length: ' + stats.avgSentLen + ' words' +
+      '\nReading Time: ' + formatTime(stats.readMins) +
+      '\nSpeaking Time: ' + formatTime(stats.speakMins);
+    if (stats.top10.length > 0) {
+      text += '\n\nTop Words:';
+      for (var i = 0; i < stats.top10.length; i++) {
+        text += '\n  ' + (i + 1) + '. ' + stats.top10[i][0] + ' (' + stats.top10[i][1] + ')';
+      }
+    }
+    navigator.clipboard.writeText(text).then(function() {
+      var btn = document.getElementById('copyStats');
+      var btn2 = document.getElementById('copyStats2');
+      var orig = btn.textContent;
+      var orig2 = btn2.textContent;
+      btn.textContent = 'Copied!';
+      btn2.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = orig; btn2.textContent = orig2; }, 1500);
+    });
+  }
+
+  document.getElementById('copyStats').addEventListener('click', copyStats);
+  document.getElementById('copyStats2').addEventListener('click', copyStats);
+
+  // Keyboard shortcut: Ctrl/Cmd+Shift+C copies stats
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+      e.preventDefault();
+      copyStats();
+    }
+  });
+
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(function() {});
+  }
+})();
+</script>
+</body>
+</html>

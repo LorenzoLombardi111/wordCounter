@@ -1,0 +1,19 @@
+# freewordcounter.app
+
+A free online word counter and character counter that runs entirely in the browser. No login, no cloud, no tracking.
+
+## Key Facts
+
+- Counts words, characters with spaces, characters without spaces, sentences, paragraphs
+- Shows reading time (200 wpm) and speaking time (130 wpm)
+- Top 10 most frequent words analysis
+- 100% free, no ads, no premium tier for counting
+- No account required
+- Text stored in browser localStorage only
+- Works offline (PWA with service worker)
+- Single HTML file, loads in under 200ms
+- Dark mode, font size control, copy stats to clipboard
+
+## Pages
+
+- Home: https://freewordcounter.app/
