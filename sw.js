@@ -1,9 +1,10 @@
-var CACHE_NAME = 'freewordcounter-v2';
+var CACHE_NAME = 'freewordcounter-v3';
 var URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/og-image.svg',
+  '/favicon.svg',
   '/vs-wordcounter-net.html',
   '/vs-wordcountertool.html',
   '/vs-charactercountonline.html',
