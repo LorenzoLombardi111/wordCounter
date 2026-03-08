@@ -1,9 +1,14 @@
-var CACHE_NAME = 'freewordcounter-v1';
+var CACHE_NAME = 'freewordcounter-v2';
 var URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/og-image.svg'
+  '/og-image.svg',
+  '/vs-wordcounter-net.html',
+  '/vs-wordcountertool.html',
+  '/vs-charactercountonline.html',
+  '/word-counter-for-essays.html',
+  '/word-counter-for-students.html'
 ];
 
 self.addEventListener('install', function(event) {
